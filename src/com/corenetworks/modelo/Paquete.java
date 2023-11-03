@@ -6,12 +6,12 @@ public class Paquete {
     private String ipOrigen;
     private  String ipDestino;
     private String mensaje;
-    private String[] contadorPaquetes;
+    private int contadorPaquetes;
 
     public Paquete() {
     }
 
-    public Paquete(String ipOrigen, String ipDestino, String mensaje, String[] contadorPaquetes) {
+    public Paquete(String ipOrigen, String ipDestino, String mensaje, int contadorPaquetes) {
         this.ipOrigen = ipOrigen;
         this.ipDestino = ipDestino;
         this.mensaje = mensaje;
@@ -42,13 +42,14 @@ public class Paquete {
         this.mensaje = mensaje;
     }
 
-    public String[] getContadorPaquetes() {
+    public int getContadorPaquetes() {
         return contadorPaquetes;
     }
 
-    public void setContadorPaquetes(String[] contadorPaquetes) {
+    public void setContadorPaquetes(int contadorPaquetes) {
         this.contadorPaquetes = contadorPaquetes;
     }
 }
+
 
 
