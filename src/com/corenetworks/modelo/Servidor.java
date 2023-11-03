@@ -4,10 +4,10 @@ public class Servidor {
     private String ip;
 
     public String leerPaquetes(Paquete[]paquetes){
-return leerPaquetes(paquetes);
+return //no se que pedir;
     }
     public boolean verificarPaquetes(Paquete[]paquetes){
-return verificarPaquetes(paquetes);
+return //no se más;
     }
 
     public Servidor() {

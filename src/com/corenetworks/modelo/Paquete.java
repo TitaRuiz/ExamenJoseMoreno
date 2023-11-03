@@ -8,6 +8,16 @@ public class Paquete {
     private String mensaje;
     private int contadorPaquetes;
 
+    @Override
+    public String toString() {
+        return "Paquete{" +
+                "ipOrigen='" + ipOrigen + '\'' +
+                ", ipDestino='" + ipDestino + '\'' +
+                ", mensaje='" + mensaje + '\'' +
+                ", contadorPaquetes=" + contadorPaquetes +
+                '}';
+    }
+
     public Paquete() {
     }
 
@@ -49,6 +59,7 @@ public class Paquete {
     public void setContadorPaquetes(int contadorPaquetes) {
         this.contadorPaquetes = contadorPaquetes;
     }
+
 }
 
 

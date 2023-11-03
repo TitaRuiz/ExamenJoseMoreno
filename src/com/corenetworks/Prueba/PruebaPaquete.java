@@ -18,7 +18,8 @@ public class PruebaPaquete {
         p1.setIpDestino(teclado.nextLine());
         System.out.println("escriba su mensaje: ");
         p1.setMensaje(teclado.nextLine());
-        String mensaje = p1.getMensaje();
+        String mensaje = teclado.nextLine();
+        p1.setMensaje(mensaje);
         // Calcular la longitud del mensaje
         int longitud = mensaje.length();
 
