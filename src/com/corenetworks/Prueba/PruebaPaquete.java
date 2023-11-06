@@ -1,45 +1,65 @@
 package com.corenetworks.Prueba;
 
 import com.corenetworks.modelo.Paquete;
+import com.corenetworks.modelo.Servidor;
 
 import java.util.Scanner;
 
 public class PruebaPaquete {
     public static void main(String[] args) {
 
-
-
         Scanner teclado = new Scanner(System.in);
-        Paquete p1 = new Paquete();
+        String ipOrigen;
+        String ipDestino;
+        String mensaje;
+        int numPaquetes;
 
         System.out.println("Escriba la dirección IP de origen: ");
-        p1.setIpOrigen(teclado.nextLine());
+        ipOrigen = teclado.nextLine();
         System.out.println("Esribala dirección IP de destino: ");
-        p1.setIpDestino(teclado.nextLine());
+        ipDestino = teclado.nextLine();
         System.out.println("escriba su mensaje: ");
-        p1.setMensaje(teclado.nextLine());
-        String mensaje = teclado.nextLine();
-        p1.setMensaje(mensaje);
+        mensaje = teclado.nextLine();
+
         // Calcular la longitud del mensaje
         int longitud = mensaje.length();
+        System.out.println("longitud del texto " + longitud);
 
-        String[] paquete;
+        //Calcular el numero de paquetes
         if (mensaje.length() % 20 == 0) {
             //Es par
-            paquete = new String[mensaje.length() / 20];
+            numPaquetes = mensaje.length() / 20;
         } else {    //Es impar
-            paquete = new String[mensaje.length() / 20 * 1];
+            numPaquetes = mensaje.length() / 20 + 1;
         }
-        for (int i = 0; i < paquete.length; i++) {
-            int posicionInicial = i * 20;
-            System.out.println(posicionInicial);
-            paquete[i] = mensaje.substring(posicionInicial, posicionInicial + 20);
-            System.out.println(paquete[i]);
-            if (mensaje.length() % 20 != 0 && i == paquete.length - 1) {
-                paquete[i] = mensaje.substring(posicionInicial);
 
+        Paquete[] paquetes = new Paquete[numPaquetes];
+
+        for (int i = 0; i < numPaquetes; i++) {
+            int posicionInicial = i * 20;
+
+            Paquete p1 = new Paquete(ipOrigen, ipDestino, numPaquetes);
+            paquetes[i] = p1;
+
+            if (mensaje.length() % 20 != 0 && i == (paquetes.length - 1)) {
+                p1.setMensaje(mensaje.substring(posicionInicial));
+                break;
             }
+
+            p1.setMensaje(mensaje.substring(posicionInicial, posicionInicial + 20));
+
         }
+
+        for (Paquete elemento: paquetes
+             ) {
+            System.out.println(elemento);
+        }
+
+        //Probar
+        Servidor s1 = new Servidor();
+        System.out.println(s1.leerPaquetes(paquetes));
+        System.out.println(s1.leerPaquetes(paquetes));
+    }
 
     }
-}
+

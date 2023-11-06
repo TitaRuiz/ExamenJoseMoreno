@@ -28,6 +28,12 @@ public class Paquete {
         this.contadorPaquetes = contadorPaquetes;
     }
 
+    public Paquete(String ipOrigen, String ipDestino, int contadorPaquetes) {
+        this.ipOrigen = ipOrigen;
+        this.ipDestino = ipDestino;
+        this.contadorPaquetes = contadorPaquetes;
+    }
+
     public String getIpOrigen() {
         return ipOrigen;
     }
@@ -59,7 +65,6 @@ public class Paquete {
     public void setContadorPaquetes(int contadorPaquetes) {
         this.contadorPaquetes = contadorPaquetes;
     }
-
 }
 
 

@@ -3,11 +3,15 @@ package com.corenetworks.modelo;
 public class Servidor {
     private String ip;
 
-    public String leerPaquetes(Paquete[]paquetes){
-return //no se que pedir;
+   public String leerPaquetes(Paquete[] paquetes){
+       String variable = "";
+       for (Paquete elemento : paquetes){
+           variable += elemento.getMensaje();
+       }
+       return variable;
     }
     public boolean verificarPaquetes(Paquete[]paquetes){
-return //no se más;
+       return paquetes.length == paquetes[1].getContadorPaquetes();
     }
 
     public Servidor() {
